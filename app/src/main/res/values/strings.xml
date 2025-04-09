@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name" translatable="false">Delfos</string>
+    <string name="waiting_audio">Waiting for audio...</string>
+    <string name="receiving_audio">Receiving audio...</string>
+</resources>
