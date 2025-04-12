@@ -16,6 +16,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import br.app.seven.delfos.ui.theme.DelfosTheme
+import kotlinx.coroutines.delay
 import java.net.DatagramPacket
 import java.net.DatagramSocket
 import java.net.Inet4Address
@@ -33,8 +34,12 @@ class MainActivity : ComponentActivity() {
                 val scope = rememberCoroutineScope()
 
                 LaunchedEffect(Unit) {
-                    notifyPresence()
                     receiver.start(scope)
+
+                    while (true) {
+                        notifyPresence()
+                        delay(5000)
+                    }
                 }
 
                 AudioServerScreen(receiver)
